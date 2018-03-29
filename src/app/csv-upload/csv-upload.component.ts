@@ -7,8 +7,10 @@ import { PapaParseService } from 'ngx-papaparse';
   styleUrls: ['./csv-upload.component.css']
 })
 export class CsvUploadComponent {
-    private csvFile;    
-    constructor(private papa: PapaParseService) {
+    data: any;
+    public csvFile;
+    constructor(public papa: PapaParseService) {
+
     }
     public changeListener(files: FileList) {
         this.csvFile = files[0]
@@ -18,9 +20,12 @@ export class CsvUploadComponent {
             header: true, 
             skipEmptyLines: true, // 빈줄은 빈문자열로 표시
             complete: (results, file) => {
-                console.log('Parsed: ', JSON.stringify(results.data));
+              this.data = results.data;
+                //console.log('Parsed: ', JSON.stringify(results.data));
+              console.info(this.data);
             }
-        });
+           });
+
     }
 
 }

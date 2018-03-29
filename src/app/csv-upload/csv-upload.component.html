@@ -1,3 +1,27 @@
 <p>
   <input type="file" class="upload" (change)="changeListener($event.target.files)">
 </p>
+<div class="container">
+  <table class="table table-striped">
+    <tr>
+      <th>tickTime</th>
+      <th>tradeTime</th>
+      <th>coin</th>
+      <th>exchange</th>
+      <th>openingPrice</th>
+      <th>highPrice</th>
+      <th>lowPrice</th>
+      <th>tradePrice</th>
+    </tr>
+    <tr  *ngFor="let row of data">
+      <td>{{row.tickTime}}</td>
+      <td>{{row.tradeTime}}</td>
+      <td>{{row.coin}}</td>
+      <td>{{row.exchange}}</td>
+      <td>{{row.openingPrice}}</td>
+      <td>{{row.highPrice}}</td>
+      <td>{{row.lowPrice}}</td>
+      <td>{{row.tradePrice}}</td>
+    </tr>
+  </table>
+</div>
