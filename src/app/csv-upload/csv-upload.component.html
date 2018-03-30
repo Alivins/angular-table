@@ -2,8 +2,9 @@
   <input type="file" class="upload" (change)="changeListener($event.target.files)">
 </p>
 <div class="container">
-  <table class="table table-striped">
-    <tr>
+<div class="table-responsive-sm">
+  <table class="table table-sm table-hover table-bordered">
+    <tr class="table-dark">
       <th>tickTime</th>
       <th>tradeTime</th>
       <th>coin</th>
@@ -24,4 +25,5 @@
       <td>{{row.tradePrice}}</td>
     </tr>
   </table>
+</div>
 </div>
